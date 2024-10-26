@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable
 
   has_many :authored_posts, class_name: "Post", foreign_key: "author_id", dependent: :destroy
-  has_and_belongs_to_many :liked_posts, class_name: "Post", join_table: "liked_posts"
+
+  has_and_belongs_to_many :liked_posts, class_name: "Post", join_table: "likes"
 
   def name
     email.split("@").first.capitalize

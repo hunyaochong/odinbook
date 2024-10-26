@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Challenges faced with implementing post likes:
+1. Tried both approaches of HABTM and :through -> both didn't quite work the way I wanted it to.
+2. has_many :through is creating distinct User / Post objects instead of likes for User / Post objects
+3. Was struggling to create new records for Likes in HABTM association
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Solution:
+1. Used HABTM, and created likes using "<<" method, which allows me to directly pass @post objects into "@user.liked_posts" -> "@user.liked_posts << @post"

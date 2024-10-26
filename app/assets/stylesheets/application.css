@@ -14,4 +14,8 @@
  *= require_self
  */
 
+/* Components */
  @import "components/_flash.css";
+
+ /* Configurations */
+ @import "config/_reset.css";

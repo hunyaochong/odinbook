@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_user
+  before_action :set_post, only: [ :like ]
 
   # To add functionality to be only able to view people who the user follows.
   def index
@@ -21,12 +21,21 @@ class PostsController < ApplicationController
     end
   end
 
-  private
-  def set_user
-    @user = current_user
+  def like
+    if @user.liked_posts << @post
+      flash[:success] = "Post successfully liked"
+      redirect_to posts_path
+    else
+      render json: { success: false, message: "Failed to like post." }, status: :unprocessable_entity
+    end
   end
 
+  private
   def authored_post_params
     params.require(:post).permit(:body)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

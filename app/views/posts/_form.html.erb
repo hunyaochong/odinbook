@@ -1,0 +1,9 @@
+<%= simple_form_for post, 
+                    html: { 
+                        class: "post form"
+                    } do |f| %>
+
+  <%= f.input :body, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", posts_path %><br>
+  <%= f.submit %>
+<% end %>

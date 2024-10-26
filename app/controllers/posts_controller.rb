@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index ]
   before_action :set_post, only: [ :like ]
 
   # To add functionality to be only able to view people who the user follows.

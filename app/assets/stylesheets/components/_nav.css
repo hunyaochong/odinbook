@@ -1,0 +1,16 @@
+nav ul,
+.nav-right {
+    display: flex;
+    gap: var(--space-xxl);
+}
+
+ul {
+    height: var(--space-xxxl);
+    justify-content: space-between;
+    padding: var(--space-xs) var(--space-xl);
+    background-color: var(--color-glint);
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    margin: auto;
+    align-items: center;
+}

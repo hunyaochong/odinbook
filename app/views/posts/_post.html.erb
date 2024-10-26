@@ -3,6 +3,8 @@
     <%= post.author.name %>
 </div>
 
-<% unless @user.liked_posts.include?(post) %>
-    <%= button_to 'Like', like_post_path(post), method: :post %>
+<% unless @user.nil? %>
+    <% unless @user.liked_posts.include?(post) %>
+        <%= button_to 'Like', like_post_path(post), method: :post %>
+    <% end %>
 <% end %>

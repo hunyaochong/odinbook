@@ -7,3 +7,9 @@ Challenges faced with implementing post likes:
 
 Solution:
 1. Used HABTM, and created likes using "<<" method, which allows me to directly pass @post objects into "@user.liked_posts" -> "@user.liked_posts << @post"
+
+# TODO
+1. ~~Insert nav bar ~~
+2. Insert "# of likes" status for each post
+3. Implement "unlike" feature
+4. ~~Implement navbar (title, sign in, register) with CSS~~

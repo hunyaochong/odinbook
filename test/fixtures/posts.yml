@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: Writing docs is such a pain.. but I know how annoying bad docs can be! So I’m doing my best to document all the components as well as I can. It’s a boring task but a must imho for a good library.
+  author: Sally
+
+two:
+  body: Sunlight is the best disinfectant
+  author: Elon

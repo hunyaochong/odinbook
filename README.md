@@ -10,6 +10,12 @@ Solution:
 
 # TODO
 1. ~~Insert nav bar ~~
-2. Insert "# of likes" status for each post
+2. ~~Insert "# of likes" status for each post~~
 3. Implement "unlike" feature
 4. ~~Implement navbar (title, sign in, register) with CSS~~
+5. Format header of home page (reposition "new post" button)
+6. Format flash message
+7. *Implement test for associations*
+8. Implement a comment view page
+9. Create a turbo frame between comment button and comment input frames
+10. Repetition in calling likes (check if require use of includes? to solve N+1 problem)

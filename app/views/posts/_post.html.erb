@@ -1,10 +1,22 @@
 <div>
     <%= post.body %>
     <%= post.author.name %>
+    <p><%= post.likes_count %> likes</p>
+    <%= link_to 'View comments', post_comments_path(post) %>
 </div>
 
-<% unless @user.nil? %>
-    <% unless @user.liked_posts.include?(post) %>
-        <%= button_to 'Like', like_post_path(post), method: :post %>
-    <% end %>
-<% end %>
+<%# Only logged in users can like and comment %>
+<div class="post__btn-container">
+    <%= link_to 'Comment', new_post_comment_path(post), class: "btn" %>
+
+    <div>
+        <% if @user.nil? %>
+            <%= button_to 'Like', like_post_path(post), class: "btn" %>
+        <% else %>
+            <% unless @user.liked_posts.include?(post) %>
+                <%= button_to 'Like', like_post_path(post), class: "btn" %>
+            <% end %>
+        <% end %>
+    </div>
+    
+</div>

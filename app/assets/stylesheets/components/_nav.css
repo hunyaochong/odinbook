@@ -1,16 +1,23 @@
-nav ul,
-.nav-right {
+.navbar {
+    background-color: var(--color-glint);
+    height: var(--space-xxxl);
+    font-weight: bold;
+    font-size: var(--font-size-xl);
     display: flex;
-    gap: var(--space-xxl);
+    align-content: center;
+    /* flex-grow: 1 1200px; */
 }
 
-ul {
-    height: var(--space-xxxl);
+nav {
+    display: flex;
     justify-content: space-between;
-    padding: var(--space-xs) var(--space-xl);
-    background-color: var(--color-glint);
-    font-size: var(--font-size-xl);
-    font-weight: bold;
     margin: auto;
-    align-items: center;
 }
+
+nav > ul {
+    max-width: 1200px;
+    display: flex;
+    gap: var(--space-l);
+    justify-content: space-between;
+}
+

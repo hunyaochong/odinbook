@@ -16,6 +16,8 @@ Solution:
 5. Format header of home page (reposition "new post" button)
 6. Format flash message
 7. *Implement test for associations*
-8. Implement a comment view page
+8. ~~Implement a comment view page~~
 9. Create a turbo frame between comment button and comment input frames
 10. Repetition in calling likes (check if require use of includes? to solve N+1 problem)
+11. To add ability for user to request to follow, instead of directly following.
+12. Tweak the user model omniauth function to allow for profile image from google

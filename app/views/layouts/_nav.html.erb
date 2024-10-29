@@ -1,13 +1,14 @@
-<nav>
-  <ul>
-    <li class="nav-left">Odinbook - X clone</li>
-    <div class="nav-right">
-        <% unless user_signed_in? %>
-            <li><%= link_to 'Sign in', new_user_session_path %></li>
-            <li><%= link_to 'Register', new_user_registration_path %></li>
-        <% else %>
-            <li><%= link_to 'Sign out', destroy_user_session_path %></li>
-        <% end %>
-    </div>
-  </ul>
-</nav>
+<div class="navbar">
+  <nav>
+    <ul>
+      <li class="nav-left"><%= link_to 'Odinbook', posts_path %></li>
+      <% unless user_signed_in? %>
+        <li class="nav-right"><%= link_to 'Sign in', new_user_session_path %></li>
+        <li class="nav-right"><%= link_to 'Register', new_user_registration_path %></li> 
+      <% else %>
+        <li class="nav-right"><%= link_to 'Sign out', destroy_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</div>
+  

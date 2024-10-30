@@ -1,6 +1,6 @@
 <div>
   <%= user.name %>
-  <% if user != current_user %>
+  <% if user != current_user && current_user.%>
     <%= button_to "Follow", connections_path(following: user, follower: current_user), method: :post %>
   <% end %>
 </div>

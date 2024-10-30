@@ -20,4 +20,6 @@ Solution:
 9. Create a turbo frame between comment button and comment input frames
 10. Repetition in calling likes (check if require use of includes? to solve N+1 problem)
 11. To add ability for user to request to follow, instead of directly following.
-12. Tweak the user model omniauth function to allow for profile image from google
+12. ~~Tweak the user model omniauth function to allow for profile image from google~~
+13. ~~Add sign in with google looking button~~ 
+14. Introduce avatarly gem for users that sign up natively within the app (not via google) [https://github.com/lucek/avatarly]

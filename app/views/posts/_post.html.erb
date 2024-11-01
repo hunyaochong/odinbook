@@ -1,22 +1,29 @@
-<div>
-    <%= post.body %>
-    <%= post.author.name %>
-    <p><%= post.likes_count %> likes</p>
-    <%= link_to 'View comments', post_comments_path(post) %>
-</div>
-
-<%# Only logged in users can like and comment %>
-<div class="post__btn-container">
-    <%= link_to 'Comment', new_post_comment_path(post), class: "btn" %>
-
+<article class="post">
+  <div class="post_header">
+    <%= image_tag user_profile_picture(post.author, 50), class: "user_profile-picture" %>
     <div>
-        <% if @user.nil? %>
-            <%= button_to 'Like', like_post_path(post), class: "btn" %>
-        <% else %>
-            <% unless @user.liked_posts.include?(post) %>
-                <%= button_to 'Like', like_post_path(post), class: "btn" %>
-            <% end %>
+        <h1><%= post.author.name %></h1>
+    </div>
+  </div>
+
+  <div class="post_body">
+    <p><%= post.body %></p>
+  </div>
+
+  <div class="post_footer">
+    <div class="post_footer-likes">
+        <%= button_to like_post_path(post), class:"btn" do %>
+            <i class="fa-regular fa-heart"></i>
+            <span><%= post.likes_count %></span>
         <% end %>
     </div>
-    
-</div>
+    <div class="post_footer-comments">
+        <button class="btn" id="btn_link">
+          <%= link_to post_comments_path(post) do %>
+            <i class="fa-regular fa-comment"></i>
+            <span><%= post.comments_count %></span>
+          <% end %>
+        </button>
+    </div>
+  </div>
+</article>

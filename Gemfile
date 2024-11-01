@@ -43,8 +43,9 @@ gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 
 gem "image_processing", "~> 1.13"
-gem "gravatar_image_tag", "~> 1.2", github: "mdeering/gravatar_image_tag"
-gem "avatarly", "~> 1.6", ">= 1.6.1"
+
+gem "font-awesome-sass", "~> 6.5", ">= 6.5.2"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

@@ -23,3 +23,4 @@ Solution:
 12. ~~Tweak the user model omniauth function to allow for profile image from google~~
 13. ~~Add sign in with google looking button~~ 
 14. Introduce avatarly gem for users that sign up natively within the app (not via google) [https://github.com/lucek/avatarly]
+15. Design post "cards"

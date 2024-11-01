@@ -1,8 +1,9 @@
 .navbar {
-    background-color: var(--color-glint);
+    background-color: var(--color-primary);
     height: var(--space-xxxl);
-    font-weight: bold;
-    font-size: var(--font-size-xl);
+    font-family: var(--font-family-serif);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--font-size-m);
     display: flex;
     align-content: center;
     /* flex-grow: 1 1200px; */

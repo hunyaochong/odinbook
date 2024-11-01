@@ -11,4 +11,8 @@ class Post < ApplicationRecord
   def likes_count
     likers.count
   end
+
+  def comments_count
+    comments.count
+  end
 end

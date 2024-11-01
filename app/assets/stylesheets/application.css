@@ -15,9 +15,12 @@
  */
 
 /* Components */
+ @import "font-awesome"; 
  @import "components/_flash.css";
  @import "components/_nav.css";
  @import "components/_button.css";
+ @import "components/_profile_picture.css";
+ @import "components/_post.css";
 
  /* Configurations */
  @import "config/_reset.css";
@@ -25,7 +28,3 @@
 
  /* Layouts */
 @import "layouts/_container.css";
-
- /* * {
-    border: red 1px solid;
- } */

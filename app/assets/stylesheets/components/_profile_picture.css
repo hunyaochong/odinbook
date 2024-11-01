@@ -1,0 +1,6 @@
+.user_profile-picture {
+    display: inline-block;
+    border-radius: 50%;
+  
+    object-fit: cover;
+}

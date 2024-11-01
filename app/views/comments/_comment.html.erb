@@ -1,1 +1,12 @@
-<div><p><%= comment.body%> - <%= comment.user.name %></p></div>
+<article class="article">
+  <div class="article_header">
+    <%= image_tag user_profile_picture(comment.user, 50), class: "user_profile-picture" %>
+    <div>
+        <h1><%= comment.user.name %></h1>
+    </div>
+  </div>
+
+  <div class="article_body">
+    <p><%= comment.body %></p>
+  </div>
+</article>

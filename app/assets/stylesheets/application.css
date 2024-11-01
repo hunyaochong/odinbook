@@ -20,7 +20,7 @@
  @import "components/_nav.css";
  @import "components/_button.css";
  @import "components/_profile_picture.css";
- @import "components/_post.css";
+ @import "components/_article.css";
 
  /* Configurations */
  @import "config/_reset.css";

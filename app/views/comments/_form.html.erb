@@ -1,6 +1,17 @@
-<%= form_with model: [post, comment] do |f| %>
-    <%= f.text_field :body %>
-    <%= link_to 'Cancel', posts_path %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit %>
-<% end %>
+<article class="article">
+    <%= form_with model: [post, comment] do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <div class="article_reply">
+            <div class="article_reply-avatar-section">   
+                <%= image_tag user_profile_picture(user, 50), class: "user_profile-picture" %>
+            </div>
+            <div class="article_reply-content-section">
+                <p>Replying to <span><%= post.author.name %></span></p>
+                <%= f.text_field :body, placeholder: "Post your reply" %>
+            </div>
+        </div>
+        
+        <%= f.submit "Reply", class:"btn"%>
+    <% end %>
+</article>
+    

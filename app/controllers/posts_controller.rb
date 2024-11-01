@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   # To add functionality to be only able to view people who the user follows.
   def index
     @posts = Post.all
+    # To allow post to be created within the index page
+    @post = @user.authored_posts.build
   end
 
   def new

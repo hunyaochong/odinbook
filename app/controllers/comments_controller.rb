@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
   def index
     @comments = @post.comments.all
+    @comment = @post.comments.build
   end
 
   def new
@@ -14,7 +15,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     if @comment.save
       flash[:success] = "Object successfully created"
-      redirect_to posts_path
+      redirect_to post_comments_path(@post)
     else
       flash[:error] = "Something went wrong"
       render "new", status: :unprocessible_entity

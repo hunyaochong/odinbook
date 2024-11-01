@@ -1,9 +1,15 @@
-<%= simple_form_for post, 
-                    html: { 
-                        class: "post form"
-                    } do |f| %>
-
-  <%= f.input :body, input_html: { autofocus: true } %>
-  <%= link_to "Cancel", posts_path %><br>
-  <%= f.submit %>
-<% end %>
+<article class="article">
+    <%= form_with model: post do |f| %>
+      <div class="article_reply">
+          <div>   
+            <%= image_tag user_profile_picture(user, 50), class: "user_profile-picture" %>
+          </div>
+          <div class="article_reply-content-section">
+            <%= f.text_field :body, placeholder: "What is happening?" %>
+          </div>
+      </div>
+      
+      <%= f.submit "Post", class:"btn"%>
+    <% end %>
+</article>
+    

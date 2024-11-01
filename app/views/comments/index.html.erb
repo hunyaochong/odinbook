@@ -1,8 +1,7 @@
 <main class="container">
-    <h1>Comments</h1>
-    <%= render @comments %>
+    <%= render @post %>
 
-    <div class="post__btn-container">
-        <%= link_to 'Comment', new_post_comment_path(@post), class: "btn" %>
-    </div>
+    <%= render "form", post: @post, comment: @comment, user: @user %>
+    
+    <%= render @comments %>
 </main>

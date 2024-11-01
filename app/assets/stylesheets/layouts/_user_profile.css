@@ -1,0 +1,12 @@
+.user_profile {
+    padding-top: var(--space-s);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+}
+
+.user_profile h1 {
+    font-family: var(--font-family-serif);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--font-size-xl);
+}

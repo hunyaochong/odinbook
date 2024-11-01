@@ -2,7 +2,7 @@
     font-family: var(--font-family-sans-serif);
     font-weight: var(--font-weight-normal);
     padding: var(--space-s);
-    max-width: 600px;
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     gap: var(--space-s);

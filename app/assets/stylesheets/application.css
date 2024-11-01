@@ -21,10 +21,12 @@
  @import "components/_button.css";
  @import "components/_profile_picture.css";
  @import "components/_article.css";
+ @import "components/_tab.css";
 
  /* Configurations */
  @import "config/_reset.css";
  @import "config/_config.css";
 
  /* Layouts */
-@import "layouts/_container.css";
+ @import "layouts/_container.css";
+ @import "layouts/_user_profile.css";

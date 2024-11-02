@@ -1,0 +1,21 @@
+.subscription_card {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: var(--space-m);
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+
+    max-width: 300px;
+}
+
+.subscription_card h1 {
+    font-size: var(--font-size-xl);
+}
+
+.subscription_card h2 {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-normal);
+}

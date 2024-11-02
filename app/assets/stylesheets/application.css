@@ -30,3 +30,22 @@
  /* Layouts */
  @import "layouts/_container.css";
  @import "layouts/_user_profile.css";
+ @import "layouts/_home.css";
+ @import "layouts/_sidebar.css";
+
+/* Global stylings */
+body {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    max-width: 1600px;
+    
+    background-color: var(--color-primary);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+

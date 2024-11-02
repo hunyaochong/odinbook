@@ -24,20 +24,6 @@
   </head>
 
   <body>
-    <div>
-      <%= render "layouts/nav" %>
-    </div>
-    
-    <main>
-      <%= render "layouts/sidebar_left" %> <%# starts with section tag %>
-      
-      <%= yield %>
-      
-      <%= render "layouts/sidebar_right" %>
-
-      <div id="flash" class="flash">
-        <%= render "layouts/flash" %>
-      </div>
-    </main>
+    <%= yield %>
   </body>
 </html>

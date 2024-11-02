@@ -2,4 +2,7 @@
     background-color: var(--color-primary);
     padding-left: var(--space-xl);
     padding-right: var(--space-xl);
+
+    display: flex;
+    flex-direction: column;
 }

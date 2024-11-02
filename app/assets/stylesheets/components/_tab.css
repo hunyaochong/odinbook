@@ -1,21 +1,13 @@
-.tab_wrapper {
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
 .tabs {
 	display: flex;
 	position: relative;
 	background-color: var(--color-primary);
 	box-shadow: 0 0 1px 0 rgba(#185ee0, 0.15), 0 6px 12px 0 rgba(#185ee0, 0.15);
-	padding: 0.75rem;
+	padding: 0.5rem;
+	margin: var(--space-m) 0;
 	border-radius: 99px; /* just a high number to create pill effect */
-	color: var(--font-color-primary);
+	font-family: var(--font-family-serif);
+	color: var(--font-color-secondary);
 	border-top: var(--border);
 	border-bottom: var(--border);
 } 

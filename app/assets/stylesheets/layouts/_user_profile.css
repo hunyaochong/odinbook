@@ -13,3 +13,16 @@
     
     padding-top: var(--space-m);
 }
+
+.user_profile_follows {
+    display: flex;
+    gap: var(--space-l);
+    color: var(--font-color-secondary);
+    font-family: var(--font-family-serif);
+    font-weight: var(--font-weight-heavy);
+    padding-top: var(--space-m);
+}
+
+.user_profile_follows:nth-last-child() {
+    border-left: 1px solid red;
+}

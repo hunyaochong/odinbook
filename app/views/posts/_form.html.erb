@@ -1,8 +1,10 @@
 <article class="article">
     <%= form_with model: post do |f| %>
       <div class="article_reply">
-          <div>   
-            <%= image_tag user_profile_picture(user, 50), class: "user_profile-picture" %>
+          <div>  
+            <% if user.profile_picture.attached? %>
+              <%= image_tag user_profile_picture(user, 50), class: "user_profile-picture" %>
+            <% end %>
           </div>
           <div class="article_reply-content-section">
             <%= f.text_field :body, placeholder: "What is happening?" %>

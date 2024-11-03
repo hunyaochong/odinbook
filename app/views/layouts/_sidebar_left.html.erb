@@ -21,13 +21,15 @@
         </div>
         <div class="home_sidebar-left-item">
             <i class="fa-solid fa-bars fa-sm fa-pull-right"></i>
-            <span>Settings</span>
+            <%= link_to 'Settings', edit_user_registration_path %>
         </div>
     </div>
     
     <div class="home_sidebar-left-g3">
         <div class="home_sidebar-left-item">
-            <%= image_tag user_profile_picture(@user, 50), class: "user_profile-picture" %>
+            <% if @user.profile_picture.attached? %>
+                <%= image_tag user_profile_picture(@user, 50), class: "user_profile-picture" %>
+            <% end %>
             <%= link_to @user.name, user_path(@user) %>
         </div>
     </div>

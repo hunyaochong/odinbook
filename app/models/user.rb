@@ -14,9 +14,11 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :commented_posts, through: :comments, source: :post
 
-  has_many :connections
-  has_many :followers, through: :connections, source: :follower, foreign_key: "following_id"
-  has_many :followings, through: :connections, source: :following, foreign_key: "follower_id"
+  has_many :followers_connection, class_name: "Connection", foreign_key: :following_id
+  has_many :followers, through: :followers_connection
+
+  has_many :followings_connection, class_name: "Connection", foreign_key: :follower_id
+  has_many :followings, through: :followings_connection
 
   def name
     email.split("@").first.capitalize

@@ -33,3 +33,12 @@
     gap: var(--space-xxl);
 }
 
+.article_header .btn {
+    margin-left: auto;
+}
+
+.article_header h2 {
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-heavy);
+    font-color: var(--font-color-secondary);
+}

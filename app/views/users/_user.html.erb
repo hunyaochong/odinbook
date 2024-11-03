@@ -1,6 +1,7 @@
-<div>
-  <%= user.name %>
-  <% if user != current_user && current_user.%>
-    <%= button_to "Follow", connections_path(following: user, follower: current_user), method: :post %>
+<div class="article_header">
+  <% if user != current_user && !(current_user.followings.include?(user)) %>
+    <%= image_tag user_profile_picture(user, 50), class: "user_profile-picture" %>
+    <h2><%= user.name %></h2>
+    <%= button_to "Follow", connections_path(following: user), method: :post, class:"btn" %>
   <% end %>
 </div>

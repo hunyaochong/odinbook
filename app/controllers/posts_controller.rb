@@ -6,6 +6,8 @@ class PostsController < ApplicationController
     @posts = Post.all
     # To allow post to be created within the index page
     @post = @user.authored_posts.build
+    # To allow viewing potential users to follow
+    @users = User.all
   end
 
   def new

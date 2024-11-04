@@ -27,6 +27,7 @@ Solution:
 21. ~~Fix comment/index error~~
 22. Set up email with letter opener gem
 23. Format user settings page
+24. Add turbo stream to like and unlike features
 
 
 # BUMP

@@ -11,6 +11,8 @@ class Post < ApplicationRecord
 
   scope :sort_by_recency, -> { order(created_at: :desc) }
 
+  after_save_commit -> { broadcast_replace_later_to "posts" }
+
   # to add counter cache instead
   def likes_count
     likers.count

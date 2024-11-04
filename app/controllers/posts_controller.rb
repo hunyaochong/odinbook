@@ -37,10 +37,8 @@ class PostsController < ApplicationController
   def unlike
     @liked_post = Like.find_by(post_id: params[:id], user_id: @user.id)
     if @liked_post.destroy
-      flash[:success] = "Post successfully unliked"
+      flash[:success] = "Post successfully uniked"
       redirect_to posts_path
-    else
-      render json: { success: false, message: "Failed to unlike post." }, status: :unprocessable_entity
     end
   end
 

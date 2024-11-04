@@ -10,7 +10,7 @@
   cursor: pointer;
   height: var(--space-xl);
   padding: 0 var(--space-xs);
-  color: var(--font-color-secondary);
+  color: var(--font-color-tertiary);
   vertical-align: top;
   border-radius: 3px;
   border: 1px solid transparent;
@@ -26,4 +26,5 @@
 .btn:hover {
   background-color: var(--color-glint);
   border-color: var(--color-glint);
+  color: var(--font-color-secondary);
 }

@@ -3,5 +3,5 @@
 
     <%= render "form", post: @post, comment: @comment, user: @user %>
     
-    <%= render @comments %>
+    <%= render @comments.sort_by_recency %>
 </main>

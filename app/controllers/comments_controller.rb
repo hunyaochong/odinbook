@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
   before_action :set_post
+  layout :resolve_layout
 
   def index
-    @comments = @post.comments.all
+    @comments = @post.comments.all.sort_by_recency
     @comment = @post.comments.build
   end
 
@@ -24,6 +25,10 @@ class CommentsController < ApplicationController
 
 
   private
+  def resolve_layout
+    action_name == "index" ? "user_profile" : "application"
+  end
+
   def comment_params
     params.require(:comment).permit(:body, :user_id)
   end

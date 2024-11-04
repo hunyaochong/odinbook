@@ -1,63 +1,102 @@
-.tabs {
+.tab-wrap {
+	transition: 0.3s box-shadow ease;
+	border-radius: var(--border-radius);
+	max-width: 600px;
 	display: flex;
+	flex-wrap: wrap;
 	position: relative;
-	background-color: var(--color-primary);
-	box-shadow: 0 0 1px 0 rgba(#185ee0, 0.15), 0 6px 12px 0 rgba(#185ee0, 0.15);
-	padding: 0.5rem;
+	list-style: none;
+	background-color: var(--color-background);
 	margin: var(--space-m) 0;
-	border-radius: 99px; /* just a high number to create pill effect */
-	font-family: var(--font-family-serif);
-	color: var(--font-color-secondary);
-	border-top: var(--border);
-	border-bottom: var(--border);
-} 
-
-.tabs * {
-	z-index: 2;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   }
-
-input[type="radio"] {
+  .tab-wrap:hover {
+	box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19);
+  }
+  
+  .tab {
 	display: none;
-}
-
-.tab {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: var(--space-xxl);
-	width: 200px;
-	font-size: var(--font-size-m);
-	font-weight: 500;
-	border-radius: 99px; /* just a high number to create pill effect */
+  }
+  .tab:nth-of-type(1):checked ~ .tab__content:nth-of-type(1),
+  .tab:nth-of-type(2):checked ~ .tab__content:nth-of-type(2) {
+	opacity: 1;
+	transition: 0.5s opacity ease-in, 0.8s transform ease;
+	position: relative;
+	top: 0;
+	z-index: 100;
+	transform: translateY(0px);
+	text-shadow: 0 0 0;
+  }
+  
+  .tab:first-of-type:not(:last-of-type) + label {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+  }
+  .tab:not(:first-of-type):not(:last-of-type) + label {
+	border-radius: 0;
+  }
+  .tab:last-of-type:not(:first-of-type) + label {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+  }
+  .tab:checked + label {
+	background-color: var(--color-background); /* for selected tab */
+	box-shadow: 0 -1px 0 var(--font-color-accent) inset; /* for selected tab line shadow when active*/
+	cursor: default;
+  }
+  .tab:checked + label:hover {
+	box-shadow: 0 -1px 0 var(--font-color-accent) inset; /* for selected tab line shadow when hovered */
+	background-color: var(--color-background);
+  }
+  .tab + label {
+	box-shadow: 0 -1px 0 var(--color-background) inset;  /* for non-selected tab line shadow when hovered */
+	border-radius: 6px 6px 0 0;
 	cursor: pointer;
-	transition: color 0.15s ease-in;
-}
-
-input[type="radio"]:checked + label {
-	color: var(--secondary-color);
-}
+	display: block;
+	text-decoration: none;
+	font-family: var(--font-family-serif);
+	font-weight: var(--font-weight-heavy);
+	color: var(--font-color-secondary);
+	flex-grow: 3;
+	text-align: center;
+	background-color: var(--color-background);	/* for non-selected tab */
+	user-select: none;
+	text-align: center;
+	transition: 0.3s background-color ease, 0.3s box-shadow ease;
+	height: 50px;
+	box-sizing: border-box;
+	padding: var(--space-s);
+  }
+  .tab + label:hover {
+	background-color: var(--color-glint); /* when hovering on non-selected tab */
+  }
   
-input[id="radio-1"]:checked ~ .glider {
-	transform: translateX(0);
-}
-  
-input[id="radio-2"]:checked ~ .glider {
-	transform: translateX(100%);
-}
-
-.glider {
+  .tab__content {
+	padding: 10px 0;
+	background-color: transparent;
 	position: absolute;
-	display: flex;
-	height: var(--space-xxl);
-	width: 200px;
-	background-color: var(--font-color-accent);
-	z-index: 1;
-	border-radius: 99px; /* just a high number to create pill effect */
-	transition: 0.25s ease-out;
-}
-
-@media (max-width: 700px) {
-	.tabs {
-	  transform: scale(0.6);
-	}
-}
+	width: 100%;
+	z-index: -1;
+	opacity: 0;
+	left: 0;
+	transform: translateY(-3px);
+	border-radius: 6px;
+  }
+  
+  /* Other styling
+  body {
+	font-family: 'Helvetica', sans-serif;
+	background-color: #e7e7e7;
+	color: #777;
+	padding: 30px 0;
+	font-weight: 300;
+  }
+  
+  .container {
+	margin: 0 auto;
+	display: block;
+	max-width: 800px;
+  } */
+  /* .container > *:not(.tab-wrap) {
+	padding: 0 80px;
+  } */

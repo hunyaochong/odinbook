@@ -3,10 +3,10 @@ class PostsController < ApplicationController
 
   # To add functionality to be only able to view people who the user follows.
   def index
-    @posts = Post.all
+    @posts = Post.all.sort_by_recency
     # To allow post to be created within the index page
     @post = @user.authored_posts.build
-    # To allow viewing potential users to follow
+    # To suggest potential users to follow
     @users = User.all
   end
 
@@ -33,6 +33,17 @@ class PostsController < ApplicationController
       render json: { success: false, message: "Failed to like post." }, status: :unprocessable_entity
     end
   end
+
+  def unlike
+    @liked_post = Like.find_by(post_id: params[:id], user_id: @user.id)
+    if @liked_post.destroy
+      flash[:success] = "Post successfully unliked"
+      redirect_to posts_path
+    else
+      render json: { success: false, message: "Failed to unlike post." }, status: :unprocessable_entity
+    end
+  end
+
 
   private
   def authored_post_params

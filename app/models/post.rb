@@ -3,11 +3,15 @@ class Post < ApplicationRecord
 
   belongs_to :author, class_name: "User"
 
-  has_and_belongs_to_many :likers, class_name: "User", join_table: "likes"
+  has_many :likes
+  has_many :likers, through: :likes, source: :user
 
   has_many :comments, dependent: :destroy
   has_many :commenters, through: :comments, source: :user
 
+  scope :sort_by_recency, -> { order(created_at: :desc) }
+
+  # to add counter cache instead
   def likes_count
     likers.count
   end

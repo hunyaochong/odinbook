@@ -2,7 +2,7 @@
     font-family: var(--font-family-sans-serif);
     font-weight: var(--font-weight-normal);
     padding: var(--space-s);
-    width: 100%;
+    /* width: 100%; */
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -10,6 +10,11 @@
     border: var(--border);
     border-bottom: none;
     border-radius: var(--border-radius);
+}
+
+.article:last-of-type {
+    border-bottom: var(--border);
+    margin-bottom: var(--space-s);
 }
 
 .article_header {
@@ -25,13 +30,12 @@
 
 .article_footer {
     display: flex;
-    gap: var(--space-m)
+    gap: var(--space-m);
 }
 
-.article_footer-likes > a,
-.article_footer-comments > a {
-    display: flex;
-    gap: var(--space-xxs);
+.article_footer-likes a,
+.article_footer-comments a {
+    color: var(--font-color-tertiary);
 }
 
 .article_footer span {
@@ -41,12 +45,12 @@
 .article a {
   &:hover,
   &:focus {
-    color: var(--font-color-primary);
+    color: var(--font-color-secondary);
   }
 }
 
 .article a:active {
-    color: var(--font-color-primary);
+    color: var(--font-color-secondary);
     background-color: var(--color-glint);
 }
 
@@ -56,7 +60,7 @@
 
 .article_reply-content-section > p {
     font-size: var(--font-size-s);
-    color: var(--font-color-secondary);
+    color: var(--font-color-primary);
 }
 
 .article_reply-content-section > p > span {
@@ -75,7 +79,7 @@
     background-color: var(--color-primary);
     border: var(--color-primary); 
     overflow-wrap: break-word;
-    color: var(--font-color-primary);
+    color: var(--font-color-tertiary);
     &:focus {
         outline: none;
     }

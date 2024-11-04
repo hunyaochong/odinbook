@@ -1,4 +1,8 @@
 <main class="container">
     <%= render "posts/form", post: @post, user: @user %>
-    <%= render @posts %>
+    <% @posts.each do |post| %>
+        <% if post.author.followers.include?(@user) || post.author == @user%>
+            <%= render post %>
+        <% end %>
+    <% end %>
 </main>

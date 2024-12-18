@@ -44,7 +44,7 @@ gem "omniauth-rails_csrf_protection"
 
 gem "image_processing", "~> 1.13"
 
-gem "font-awesome-sass", "~> 6.5", ">= 6.5.2"
+gem "font-awesome-sass", "~> 6.7"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
